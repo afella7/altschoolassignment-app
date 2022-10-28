@@ -1,24 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import Users from "./components/Users";
+import Products from "./components/Products";
+import FeaturedProducts from "./components/FeaturedProducts";
+import NewProducts from "./components/NewProducts";
+import PageNotFound from "./components/PageNotFound";
+import ErrorBoundary from "./components/ErrorBoundary";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <section className="main-container">
+      <ErrorBoundary>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/products" element={<Products />}>
+            <Route path="/products/featured" element={<FeaturedProducts />} />
+            <Route path="/products/new" element={<NewProducts />} />
+          </Route>
+          <Route path="*" element={<PageNotFound />} />
+        </Routes>
+      </ErrorBoundary>
+    </section>
   );
 }
 

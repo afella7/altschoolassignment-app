@@ -11,3 +11,53 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.primary-nav {
+  background-color: pink;
+  padding: 16px 32px;
+}
+
+nav a {
+  margin-right: 16px;
+}
+
+.pagination {
+  display: flex;
+}
+
+.pagination a {
+  padding: 5px;
+}
+
+.users-container {
+ margin-left: 50px;
+  
+}
+.users-container h1 {
+  text-align: center;
+}
+.user-contd {
+  max-width: 100%;
+}
+.use {
+  align-items: center;
+  margin-left: 500px;
+}
+.pagination {
+  margin-left: 500px;
+}
+
+.page-not-found {
+  margin-top: 100px;
+  margin-left: 200px;
+}
+
+@media screen and (max-width: 600px) {
+  .use {
+    align-items: center;
+    margin-left: 20px;
+  }
+  .pagination {
+    margin-left: 20px;
+  }
+}
